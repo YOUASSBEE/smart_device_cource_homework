@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <math.h>
 
 int main() {
 
@@ -9,16 +10,9 @@ int main() {
     int a, b, c;
     double avg;
 
-    printf("Введите первое целое число:\n");
-    scanf("%d", &a);
+    scanf("%d %d %d", &a, &b, &c);
 
-    printf("Введите второе целое число:\n");
-    scanf("%d", &b);
-    
-    printf("Введите третье целое число:\n");
-    scanf("%d", &c);    
-
-    avg = (a + b +c)/3;
+    avg = ((double)a + (double)b +(double)c)/3;
 
     printf("%.2f\n", avg);
 

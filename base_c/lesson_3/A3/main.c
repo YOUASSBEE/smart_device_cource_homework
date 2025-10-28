@@ -8,17 +8,11 @@ int main() {
 
     int a, b, c, summ;
 
-    printf("Введите первое целое число:\n");
-    scanf("%d", &a);
-
-    printf("Введите второе целое число:\n");
-    scanf("%d", &b);
-    
-    printf("Введите третье целое число:\n");
-    scanf("%d", &c);    
+    //printf("Введите три целых числа:\n");
+    scanf("%d %d %d", &a, &b, &c);
 
     summ = a + b +c;
 
-    printf("a+b+c=%d\n", summ);
+    printf("%d+%d+%d=%d", a, b, c, summ);
     return 0;
 }

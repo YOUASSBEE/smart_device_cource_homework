@@ -8,21 +8,14 @@ int main() {
 
     int a, b, c, summ, mult;
 
-    printf("Введите первое целое число:\n");
-    scanf("%d", &a);
-
-    printf("Введите второе целое число:\n");
-    scanf("%d", &b);
-    
-    printf("Введите третье целое число:\n");
-    scanf("%d", &c);    
+    scanf("%d %d %d", &a, &b, &c);
 
     summ = a + b +c;
 
     mult = a * b * c;
 
-    printf("a+b+c=%d\n", summ);
-    printf("a*b*c=%d", mult);
+    printf("%d+%d+%d=%d\n", a, b, c, summ);
+    printf("%d*%d*%d=%d", a, b, c, mult);
 
     return 0;
 }
