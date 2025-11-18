@@ -6,13 +6,16 @@ int calcFunc(int x) {
         return x * x;
     } else if (x >= 2) {
         return x * x + 4 * x + 5;
-    } else { // x < -2
+    } else {
         return 4;
     }
 }
 
 int main() 
 {
+
+    //setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL,"en_US.UTF-8");
 
     int x;
     int max_value = -2147483647;
