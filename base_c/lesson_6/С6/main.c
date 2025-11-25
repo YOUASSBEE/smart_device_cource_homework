@@ -20,7 +20,6 @@ int main()
     unsigned int x;
 
     scanf("%u", &x);
-
     printf("%llu\n", chessCount(x));  
     
     return 0;
