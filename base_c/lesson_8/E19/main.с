@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h> 
+
+int main()
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    #define ARRNUMBER 10
+    int sizeOfArr = ARRNUMBER;
+    int numArray[ARRNUMBER] = {0};
+    long number = 0;
+    int index = 0;
+
+    scanf("%ld", &number);
+
+    long tmp1 = number;
+    while (tmp1 > 0)
+    {
+        tmp1 = tmp1 /= 10;
+        index++;
+    }
+
+    long tmp2 = number;
+    for (int i = index - 1; i >= 0; i--)
+    {
+        numArray[i] = tmp2 % 10;
+        tmp2 = tmp2 / 10;
+    }
+
+    for (int i = 0; i < index; i++)
+    {
+        printf("%d ", numArray[i]);
+    }
+
+    return 0;
+    }

@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    int numArray[5] = {0};
+    int summ = 0;
+    float average = 0;
+
+    int sizeOfArr = (sizeof(numArray)/sizeof(numArray[0]));
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]); 
+        summ += numArray[i];
+    }
+
+    average = (float)summ / sizeOfArr;
+    
+    printf("%.3f\n", average);
+    
+    return 0;
+}

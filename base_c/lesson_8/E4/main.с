@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    int numArray[10] = {0};
+    int maxNumber1 = 0;
+    int maxNumber2 = 0;
+    int maxNumberSumm = 0;
+
+    int sizeOfArr = (sizeof(numArray)/sizeof(numArray[0]));
+
+    // Ввод элементов массива
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+
+    if (numArray[0] > numArray[1])
+    {
+        maxNumber1 = numArray[0];
+        maxNumber2 = numArray[1];
+    }
+
+    else
+    {
+        maxNumber1 = numArray[1];
+        maxNumber2 = numArray[0];
+    }
+
+    for (int i = 2; i < sizeOfArr; i++)
+    {
+        if (numArray[i] > maxNumber1)
+        {
+            maxNumber2 = maxNumber1;
+            maxNumber1 = numArray[i];
+        } 
+        else if (numArray[i] > maxNumber2)
+        {
+            maxNumber2 = numArray[i];
+        }
+    }
+
+    maxNumberSumm = maxNumber1 + maxNumber2;
+    
+    printf("%d\n", maxNumberSumm);
+    
+    return 0;
+}

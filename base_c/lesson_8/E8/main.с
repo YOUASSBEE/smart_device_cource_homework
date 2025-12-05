@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    int numArray[12] = {0};
+
+    int sizeOfArr = 12;
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+
+    for (int i = 0; i < (sizeOfArr / 3) / 2; i++)
+    {
+        int temp = numArray[i];
+        numArray[i] = numArray[3 - i];
+        numArray[3 - i] = temp;
+    }
+
+    for (int i = 0; i < (sizeOfArr / 3) / 2; i++)
+    {
+        int temp = numArray[4 + i];
+        numArray[4 + i] = numArray[7 - i];
+        numArray[7 - i] = temp;
+    }
+
+    for (int i = 0; i < (sizeOfArr / 3) / 2; i++)
+    {
+        int temp = numArray[8 + i];
+        numArray[8 + i] = numArray[11 - i];
+        numArray[11 - i] = temp;
+    }
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        printf("%d ", numArray[i]);
+    }
+    
+    return 0;
+}

@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    #define ARRNUMBER 10
+    int sizeOfArr = ARRNUMBER;
+    int numArray[ARRNUMBER] = {0};
+    int onceCount[ARRNUMBER] = {0};
+    int maxCount = 0;
+    int k = 0;
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        int current = numArray[i];
+        int count = 0;
+
+        for (int j = 0; j < sizeOfArr; j++)
+        {
+            if (numArray[j] == current)
+            {
+                count++;
+            }
+        }
+        
+        if (count == 1)
+        {   
+            onceCount[k] = current;
+            k++;
+        }
+    }
+
+    for (int i = 0; i < k; i++)
+    {
+        printf("%d ", onceCount[i]);
+    }
+
+    return 0;
+    }

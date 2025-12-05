@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    #define ARRNUMBER 10
+    int sizeOfArr = ARRNUMBER;
+    int numArray[ARRNUMBER];
+    int resultArray[ARRNUMBER];
+    int count = 0;
+    
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+    
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        int foundDuplicate = 0;
+        
+        for (int j = i + 1; j < sizeOfArr; j++)
+        {
+            if (numArray[i] == numArray[j])
+            {
+                foundDuplicate = 1;
+                break;
+            }
+        }
+
+        if (foundDuplicate)
+        {
+            int inResultArray = 0;
+
+            for (int k = 0; k < count; k++)
+            {
+                if (resultArray[k] == numArray[i])
+                {
+                    inResultArray = 1;
+                    break;
+                }
+            }
+            
+            if (!inResultArray)
+            {
+                resultArray[count++] = numArray[i];
+            }
+        }
+    }
+
+    for (int i = 0; i < count; i++)
+    {
+        printf("%d ", resultArray[i]);
+    }
+
+    return 0;
+
+    }

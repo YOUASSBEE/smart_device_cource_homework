@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    int numArray[12] = {0};
+    float summ = 0;
+    float meanValue;
+
+    int sizeOfArr = (sizeof(numArray)/sizeof(numArray[0]));
+
+    // Ввод элементов массива
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+        summ += numArray[i];
+    }
+
+    meanValue = summ / sizeOfArr;
+    
+    printf("%.2f\n", meanValue);
+    
+    return 0;
+}

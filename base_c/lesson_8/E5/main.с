@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+    
+    int numArray[10] = {0};
+    int summPositive = 0;
+
+    int sizeOfArr = (sizeof(numArray)/sizeof(numArray[0]));
+
+    // Ввод элементов массива
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+
+        if (numArray[i] > 0)
+        {
+            summPositive += numArray[i];
+        }
+    }
+    
+    printf("%d\n", summPositive);
+    
+    return 0;
+}

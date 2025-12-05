@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <locale.h>
+
+void bubbleSortUpToDown(int numArray[], int sizeOfArr)
+{
+    for (int i = 0; i < (sizeOfArr / 2) - 1; i++)
+    {
+        for (int j = 0; j < (sizeOfArr / 2) - 1 - i; j++)
+        {
+            if (numArray[j] > numArray[j + 1])
+            {
+                int temp = numArray[j];
+                numArray[j] = numArray[j + 1];
+                numArray[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < (sizeOfArr / 2) - 1; i++)
+    {
+        for (int j = sizeOfArr / 2; j < sizeOfArr - 1 - i; j++)
+        {
+            if (numArray[j] < numArray[j + 1])
+            {
+                int temp = numArray[j];
+                numArray[j] = numArray[j + 1];
+                numArray[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() 
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+
+    #define ARRNUMBER 10
+    
+    int numArray[ARRNUMBER] = {0};
+    int sizeOfArr = ARRNUMBER;
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+
+    bubbleSortUpToDown(numArray, sizeOfArr);
+
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        printf("%d ", numArray[i]);
+    }
+    
+    return 0;
+}
