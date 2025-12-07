@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h> 
+
+void count_digits(const char* number, int counts[10]) {
+    for (int i = 0; i < 10; i++) {
+        counts[i] = 0;
+    }
+    
+    for (int i = 0; number[i] != '\0'; i++) {
+        if (number[i] >= '0' && number[i] <= '9') {
+            int digit = number[i] - '0';
+            counts[digit]++;
+        }
+    }
+}
+
+int main()
+{
+    //setlocale(LC_ALL, "Rus");    
+    setlocale(LC_ALL, "en_US.UTF-8");
+
+    char number[1002];
+    int digit_counts[10];
+    
+    scanf("%s", &number);
+
+    count_digits(number, digit_counts);
+
+        for (int i = 0; i < 10; i++) {
+        if (digit_counts[i] > 0) {
+            printf("%d %d\n", i, digit_counts[i]);
+        }
+    }
+
+    return 0;
+    }
