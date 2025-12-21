@@ -1,0 +1,48 @@
+// #include <stdio.h>
+// #include <locale.h> 
+
+int is_two_same(int size, int a[]) {
+    if (size < 2) {
+        return 0;
+    }
+    
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (a[i] == a[j]) {
+                return 1;
+            }
+        }
+    }
+    
+    return 0;
+}
+
+// int main()
+// {
+//     //setlocale(LC_ALL, "Rus");    
+//     setlocale(LC_ALL, "en_US.UTF-8");
+
+//     #define MAX_SIZE 5
+
+//     int arr[MAX_SIZE];
+//     int n = MAX_SIZE;
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     int check = is_two_same(n, arr);
+
+//     if (check)
+//     {
+//         printf("YES");
+//     }
+
+//     if (!check)
+//     {
+//         printf("NO");
+//     }
+
+//     return 0;
+//     }

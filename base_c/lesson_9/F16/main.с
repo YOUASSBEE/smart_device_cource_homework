@@ -1,0 +1,24 @@
+#include <ctype.h>
+#include <stdio.h>
+
+int main() {
+  char letter;
+  char digit_char;
+  int col;
+  int row;
+
+  scanf("%c%c", &letter, &digit_char);
+
+  letter = toupper(letter);
+  col = letter - 'A' + 1;
+
+  row = digit_char - '0';
+
+  if ((col + row) % 2 == 0) {
+    printf("BLACK");
+  } else {
+    printf("WHITE");
+  }
+
+  return 0;
+}

@@ -1,0 +1,50 @@
+// #include <locale.h>
+// #include <stdio.h>
+
+void swap_negmax_last(int size, int a[]) {
+  if (size <= 0) {
+    return;
+  }
+
+  int max_neg_index = -1;
+  int max_neg_value;
+
+  for (int i = 0; i < size; i++) {
+    if (a[i] < 0) {
+      max_neg_index = i;
+      max_neg_value = a[i];
+      break;
+    }
+  }
+
+  if (max_neg_index == -1) {
+    return;
+  }
+
+  for (int i = max_neg_index + 1; i < size; i++) {
+    if (a[i] < 0 && a[i] > max_neg_value) {
+      max_neg_index = i;
+      max_neg_value = a[i];
+    }
+  }
+
+  int temp = a[max_neg_index];
+  a[max_neg_index] = a[size - 1];
+  a[size - 1] = temp;
+}
+
+// int main() {
+//   // setlocale(LC_ALL, "Rus");
+//   setlocale(LC_ALL, "en_US.UTF-8");
+
+//   int arr[] = {1, -2, -3, -4, 5, 6, 7, 8, 9, 10};
+//   int size = 10;
+
+//   swap_negmax_last(size, arr);
+
+//   for (int i = 0; i < size; i++) {
+//     printf("%d ", arr[i]);
+//   }
+
+//   return 0;
+// }

@@ -1,0 +1,61 @@
+// #include <stdio.h>
+// #include <locale.h>
+
+int compression(int a[], int b[], int N)
+{
+  if (N == 0)
+  {
+    return 0;
+  }
+
+  int compressed_index = 0;
+  int current_index = 0;
+
+  if (a[0] == 0)
+  {
+    int count = 0;
+    while (current_index < N && a[current_index] == 0)
+    {
+      count++;
+      current_index++;
+    }
+    b[compressed_index++] = count;
+  } 
+  else 
+  {
+    b[compressed_index++] = 0;
+  }
+
+  while (current_index < N)
+  {
+    int current_value = a[current_index];
+    int count = 0;
+
+    while (current_index < N && a[current_index] == current_value)
+    {
+      count++;
+      current_index++;
+    }
+
+    b[compressed_index++] = count;
+  }
+
+  return compressed_index;
+}
+
+// int main()
+// {
+//     //setlocale(LC_ALL, "Rus");    
+//     setlocale(LC_ALL, "en_US.UTF-8");
+
+//     int a1[] = {1,1,0,0,1,1,1,0,1,1,0,0,0,0,1,1,0,0,0,1};
+//     int b1[100];
+//     int size1 = compression(a1, b1, 20);
+
+//     for (int i = 0; i < size1; i++)
+//     {
+//       printf("%d ", b1[i]);
+//     }
+
+//     return 0;
+//     }
