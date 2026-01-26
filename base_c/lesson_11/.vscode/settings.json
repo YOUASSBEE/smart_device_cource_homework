@@ -1,0 +1,4 @@
+{
+    "makefile.configureOnOpen": true,
+    "C_Cpp.default.compilerPath": "C:\\Users\\Anton\\.niiet_aspect\\riscv_gcc_windows\\bin\\riscv64-unknown-elf-gcc.exe"
+}

@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Project",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": ["all"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Clean Project",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": ["clean"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": ["run"],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": ["debug"],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": ["release"],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
